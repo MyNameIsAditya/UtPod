@@ -158,39 +158,25 @@ void UtPod::showSongList()
 */
 void UtPod::sortSongList()
 {
-    SongNode* head = NULL;
-    while (songs != NULL)
+    int pass = 0;
+    int length = getNumSongs();
+    for(pass = 0; pass < length; pass++)
     {
-        SongNode* max = new SongNode;
-        SongNode* temp = songs;
-        SongNode* previous = NULL;
-        SongNode* beforeMax = NULL;
-        max = temp;
-        while (temp != NULL)
+        SongNode * temp = songs;
+        int innerIdx = 0;
+        while(temp != NULL &&  innerIdx < length-pass-1)
         {
-            if ((temp->s) > (max->s))
+            SongNode * temp2 = temp->next;
+            if((temp->s) > (temp2->s))
             {
-                max = temp;
-                beforeMax = previous;
+                Song stored = temp->s;
+                temp->s = temp2->s;
+                temp2->s = stored;
             }
-            previous = temp;
             temp = temp->next;
+            innerIdx++;
         }
-        SongNode* addedNode = new SongNode;
-        addedNode->s = max->s;
-        addedNode->next = head;
-        head = addedNode;
-        if (max == songs)
-        {
-            songs = max->next;
-        }
-        else
-        {
-            beforeMax->next = max->next;
-        }
-        delete max;
     }
-    songs = head;
 }
 
 /* FUNCTION - void clearMemory
@@ -200,13 +186,14 @@ void UtPod::sortSongList()
 */
 void UtPod::clearMemory()
 {
-    SongNode* temp = songs;
-    while (temp != NULL)
+    SongNode * temp = songs;
+    while(temp != NULL)
     {
-        temp = songs->next;
-        delete songs;
-        songs = temp;
+        SongNode * prev = temp;
+        temp = temp->next;
+        delete prev;
     }
+    songs = NULL;
 }
 
 /* FUNCTION - int getTotalMemory
