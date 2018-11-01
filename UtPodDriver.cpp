@@ -129,7 +129,7 @@ int main(int argc, char *argv[])
     t.showSongList();
     cout << endl;
 
-    cout << "------------------------------Add Invalid Song (Size Exceeds Memory)-------------------------" << endl;
+    cout << "------------------Add Invalid Song (Size Exceeds Memory)---------------" << endl;
     cout << "Hey Jude by Beatles (1024 MB)" << endl;
     Song a2("Hey Jude", "Beatles", 1024);
     result = t.addSong(a2);
@@ -145,7 +145,7 @@ int main(int argc, char *argv[])
     t.showSongList();
     cout << endl;
 
-    cout << "------------------------------Add Invalid Song (Negative Size)-------------------------" << endl;
+    cout << "--------------------Add Invalid Song (Negative Size)--------------" << endl;
     cout << "Can't Hold Us by Macklemore (-7 MB)" << endl;
     Song a3("Can't Hold Us", "Macklemore", -7);
     result = t.addSong(a3);
@@ -190,7 +190,7 @@ int main(int argc, char *argv[])
 
 
 
-    cout << "------------------------------Delete Invalid Song (Song Non-Existent)-------------------------" << endl;
+    cout << "------------------Delete Invalid Song (Song Non-Existent)----------" << endl;
     cout << "Hey Jude by Beatles (1024 MB)" << endl;
     result = t.removeSong(a2);
     if (result == 0)
@@ -205,7 +205,7 @@ int main(int argc, char *argv[])
     t.showSongList();
     cout << endl;
 
-    cout << "------------------------------Delete Valid Song-------------------------" << endl;
+    cout << "-------------------------Delete Valid Song-------------------" << endl;
     cout << "Dancing Queen by ABBA (7 MB)" << endl;
     result = t.removeSong(a1);
     if (result == 0)
@@ -224,7 +224,7 @@ int main(int argc, char *argv[])
     //cout << "Current UT Pod: ";
     //t.showSongList();
 
-    cout << "------------------------------Delete Invalid Song (Empty List)-------------------------" << endl;
+    cout << "------------------Delete Invalid Song (Empty List)-----------------" << endl;
 
     cout << "Dancing Queen by ABBA (7 MB)" << endl;
     cout << "UT Pod Contents:" << endl;
@@ -243,7 +243,7 @@ int main(int argc, char *argv[])
     t.showSongList();
     cout << endl;
 
-    cout << "------------------------------Delete Valid Song (Duplicate Songs)-------------------------" << endl;
+    cout << "-----------------Delete Valid Song (Duplicate Songs)--------------" << endl;
     t.addSong({"Dancing Queen", "ABBA", 7});
     t.addSong({"TEST", "TEST", 7});
     t.addSong({"Dancing Queen", "ABBA", 7});
@@ -263,7 +263,7 @@ int main(int argc, char *argv[])
     t.showSongList();
     cout << endl;
 
-    cout << "------------------------------Checks Remaining Memory-------------------------" << endl;
+    cout << "-------------------Checks Remaining Memory---------------" << endl;
     t.clearMemory();
     t.addSong({"Dancing Queen", "ABBA", 12});
     t.addSong({"Hey Jude", "Beatles", 400});
@@ -271,7 +271,7 @@ int main(int argc, char *argv[])
     t.showSongList();
     cout << "Memory Remaining: " << t.getRemainingMemory() << endl << endl;
 
-    cout << "------------------------------Checks Clear Memory-------------------------" << endl;
+    cout << "----------------------Checks Clear Memory--------------------" << endl;
     cout << "UT Pod Contents: " << endl;
     t.showSongList();
     t.clearMemory();
@@ -279,7 +279,7 @@ int main(int argc, char *argv[])
     t.showSongList();
     cout << endl;
 
-    cout << "------------------------------Adds Songs To Be Sorted/Shuffled-------------------------" << endl;
+    cout << "---------------------Adds Songs To Be Sorted/Shuffled----------------" << endl;
     t.addSong({"Dancing Queen", "ABBA", 7});
     t.addSong({"Hey Jude", "Beatles", 7});
     t.addSong({"Bohemian Rhapsody", "Queen", 7});
@@ -296,52 +296,52 @@ int main(int argc, char *argv[])
     t.showSongList();
     cout << endl;
 
-    cout << "------------------------------Checks Sort List-------------------------" << endl;
+    cout << "----------------------Checks Sort List----------------" << endl;
     t.sortSongList();
     cout << "UT Pod Contents: " << endl;
     t.showSongList();
     cout << endl;
 
-    cout << "------------------------------Checks Shuffle-------------------------" << endl;
+    cout << "-----------------------Checks Shuffle-------------------" << endl;
     t.shuffle();
     cout << "UT Pod Contents: " << endl;
     t.showSongList();
     cout << endl;
 
-    cout << "------------------------------Checks Sort List (0 Songs)-------------------------" << endl;
+    cout << "-----------------Checks Sort List (0 Songs)------------------" << endl;
     t.clearMemory();
     t.sortSongList();
     cout << "UT Pod Contents: " << endl;
     t.showSongList();
     cout << endl;
 
-    cout << "------------------------------Checks Shuffle (0 Songs)-------------------------" << endl;
+    cout << "--------------------Checks Shuffle (0 Songs)-------------------" << endl;
     t.shuffle();
     cout << "UT Pod Contents: " << endl;
     t.showSongList();
     cout << endl;
 
-    cout << "------------------------------Checks Sort List (1 Songs)-------------------------" << endl;
+    cout << "-------------------Checks Sort List (1 Songs)-----------------" << endl;
     t.addSong({"Dancing Queen", "ABBA", 7});
     t.sortSongList();
     cout << "UT Pod Contents: " << endl;
     t.showSongList();
     cout << endl;
 
-    cout << "------------------------------Checks Shuffle (1 Songs)-------------------------" << endl;
+    cout << "----------------------Checks Shuffle (1 Songs)---------------" << endl;
     t.shuffle();
     cout << "UT Pod Contents: " << endl;
     t.showSongList();
     cout << endl;
 
-    cout << "------------------------------Checks Sort List (2 Songs)-------------------------" << endl;
+    cout << "-------------------Checks Sort List (2 Songs)------------" << endl;
     t.addSong({"I Want To Be A Hero", "Pokemon", 7});
     t.sortSongList();
     cout << "UT Pod Contents: " << endl;
     t.showSongList();
     cout << endl;
 
-    cout << "------------------------------Checks Shuffle (2 Songs)-------------------------" << endl;
+    cout << "-------------------Checks Shuffle (2 Songs)---------------" << endl;
     t.shuffle();
     cout << "UT Pod Contents: " << endl;
     t.showSongList();
@@ -360,15 +360,15 @@ int main(int argc, char *argv[])
 
     cout << "*************************OUR SONG TEST CASES*************************" << endl;
 
-    cout << "------------------Testing Default Song Constructor------------------" << endl;
+    cout << "------------Testing Default Song Constructor-------------" << endl;
     Song defaultSong;
     cout << "Song Name: " << defaultSong.getTitle() << " Song Artist: " << defaultSong.getArtist() << " Song Size: " << defaultSong.getSize() << endl << endl;
 
-    cout << "------------------Testing Parameter Song Constructor------------------" << endl;
+    cout << "----------Testing Parameter Song Constructor-------------" << endl;
     Song paramSong("21 Guns", "Green Day", 35);
     cout << "Song Name: " << paramSong.getTitle() << " Song Artist: " << paramSong.getArtist() << " Song Size: " << paramSong.getSize() << endl << endl;
 
-    cout << "------------------Changing Default Song Values------------------" << endl;
+    cout << "-----------Changing Default Song Values--------------" << endl;
     defaultSong.setTitle("Powerglide");
     defaultSong.setArtist("Rae Sremmurd");
     defaultSong.setSize(24);
@@ -379,7 +379,7 @@ int main(int argc, char *argv[])
     cout << defaultSong.getTitle() << " > " <<  paramSong.getTitle() << ": " << (defaultSong > paramSong ? "true":"false") << endl;
     cout << defaultSong.getTitle() << " == " <<  paramSong.getTitle() << ": " << (defaultSong == paramSong ? "true":"false") << endl << endl;
 
-    cout << "------------------Checking Operators on Letters Only------------------" << endl;
+    cout << "-------------Checking Operators on Letters Only----------" << endl;
     paramSong.setTitle("American Idiot");
     cout << paramSong.getTitle() << " < " <<  defaultSong.getTitle() << ": " << (paramSong < defaultSong ? "true":"false") << endl;
     cout << paramSong.getTitle() << " > " <<  defaultSong.getTitle() << ": " << (paramSong > defaultSong ? "true":"false") << endl;
