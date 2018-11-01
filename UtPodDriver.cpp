@@ -7,10 +7,10 @@
  *
  * Replace <NAME> with your name.
  *
- * On my honor, Aditya Khanna, this programming project is my own work
+ * On my honor, Aditya Khanna and Kedar Raman, this programming project is my own work
  * and I have not provided this code to any other student.
  *
- * Name: Aditya Khanna
+ * Name: Aditya Khanna and Kedar Raman
  * email address: adityakhanna22@yahoo.com
  * UTEID: ak34642
  * Section 5 digit ID: 16225
@@ -91,65 +91,27 @@ int main(int argc, char *argv[])
     cout << "------------------Testing Default Constructor------------------" << endl;
     UtPod tdef;
     tdef.showSongList();
-    cout << "Num Songs: " << tdef.getNumSongs() << " Total Size: " << tdef.getTotalMemory() << " Remaining Mem: " << tdef.getRemainingMemory()  << endl;
+    cout << "Num Songs: " << tdef.getNumSongs() << " Total Size: " << tdef.getTotalMemory() << " Remaining Mem: " << tdef.getRemainingMemory()  << endl << endl;
 
     cout << "------------------Testing 16MB Constructor------------------" << endl;
     UtPod t16(16);
     t16.showSongList();
-    cout << "Num Songs: " << t16.getNumSongs() << " Total Size: " << t16.getTotalMemory() << " Remaining Mem: " << t16.getRemainingMemory()  << endl;
+    cout << "Num Songs: " << t16.getNumSongs() << " Total Size: " << t16.getTotalMemory() << " Remaining Mem: " << t16.getRemainingMemory()  << endl << endl;
 
     cout << "------------------Testing 0MB Constructor------------------" << endl;
     UtPod t0(0);
     t0.showSongList();
-    cout << "Num Songs: " << t0.getNumSongs() << " Total Size: " << t0.getTotalMemory() << " Remaining Mem: " << t0.getRemainingMemory()  << endl;
+    cout << "Num Songs: " << t0.getNumSongs() << " Total Size: " << t0.getTotalMemory() << " Remaining Mem: " << t0.getRemainingMemory()  << endl << endl;
 
     cout << "------------------Testing 1024MB Constructor------------------" << endl;
     UtPod t1024(1024);
     t1024.showSongList();
-    cout << "Num Songs: " << t1024.getNumSongs() << " Total Size: " << t1024.getTotalMemory() << " Remaining Mem: " << t1024.getRemainingMemory()  << endl;
+    cout << "Num Songs: " << t1024.getNumSongs() << " Total Size: " << t1024.getTotalMemory() << " Remaining Mem: " << t1024.getRemainingMemory()  << endl << endl;
 
     cout << "------------------Testing -512MB Constructor------------------" << endl;
     UtPod tn(-512);
     tn.showSongList();
-    cout << "Num Songs: " << tn.getNumSongs() << " Total Size: " << tn.getTotalMemory() << " Remaining Mem: " << tn.getRemainingMemory()  << endl;
-
-    cout << "------------------Testing Song Class------------------" << endl;
-    cout << "------------------Testing Default Song Constructor------------------" << endl;
-    Song defaultSong;
-    cout << "Song Name: " << defaultSong.getTitle() << " Song Artist: " << defaultSong.getArtist() << " Song Size: " << defaultSong.getSize() << endl;
-
-    cout << "------------------Testing Parameter Song Constructor------------------" << endl;
-    Song paramSong("21 Guns", "Green Day", 35);
-    cout << "Song Name: " << paramSong.getTitle() << " Song Artist: " << paramSong.getArtist() << " Song Size: " << paramSong.getSize() << endl;
-
-    cout << "------------------Changing Default Song Values------------------" << endl;
-    defaultSong.setTitle("Powerglide");
-    defaultSong.setArtist("Rae Sremmurd");
-    defaultSong.setSize(24);
-    cout << "Song Name: " << defaultSong.getTitle() << " Song Artist: " << defaultSong.getArtist() << " Song Size: " << defaultSong.getSize() << endl;
-
-    cout << "------------------Checking Operators------------------" << endl;
-    cout << defaultSong.getTitle() << " < " <<  paramSong.getTitle() << ": " << (defaultSong < paramSong ? "true":"false") << endl;
-    cout << defaultSong.getTitle() << " > " <<  paramSong.getTitle() << ": " << (defaultSong > paramSong ? "true":"false") << endl;
-    cout << defaultSong.getTitle() << " == " <<  paramSong.getTitle() << ": " << (defaultSong == paramSong ? "true":"false") << endl;
-
-    cout << "------------------Checking Operators on Letters Only------------------" << endl;
-    paramSong.setTitle("American Idiot");
-    cout << paramSong.getTitle() << " < " <<  defaultSong.getTitle() << ": " << (paramSong < defaultSong ? "true":"false") << endl;
-    cout << paramSong.getTitle() << " > " <<  defaultSong.getTitle() << ": " << (paramSong > defaultSong ? "true":"false") << endl;
-    cout << paramSong.getTitle() << " == " <<  defaultSong.getTitle() << ": " << (paramSong == defaultSong ? "true":"false") << endl;
-
-    cout << "------------------Checking Equals Operator------------------" << endl;
-    defaultSong.setTitle("American Idiot");
-    cout << paramSong.getTitle() << " by " << paramSong.getArtist() << " == " <<  defaultSong.getTitle() << " by " << defaultSong.getArtist() << ": " << (paramSong == defaultSong ? "true":"false") << endl;
-    defaultSong.setArtist("Green Day");
-    cout << paramSong.getTitle() << " by " << paramSong.getArtist() << " == " <<  defaultSong.getTitle() << " by " << defaultSong.getArtist() << ": " << (paramSong == defaultSong ? "true":"false") << endl;
-    defaultSong.setSize(35);
-    cout << paramSong.getTitle() << " by " << paramSong.getArtist() << " == " <<  defaultSong.getTitle() << " by " << defaultSong.getArtist() << ": " << (paramSong == defaultSong ? "true":"false") << endl;
-
-    t.clearMemory();
-
-
+    cout << "Num Songs: " << tn.getNumSongs() << " Total Size: " << tn.getTotalMemory() << " Remaining Mem: " << tn.getRemainingMemory()  << endl << endl;
 
     cout << "------------------------------Add Valid Song-------------------------" << endl;
     cout << "Dancing Queen by ABBA (7 MB)" << endl;
@@ -383,6 +345,7 @@ int main(int argc, char *argv[])
     t.shuffle();
     cout << "UT Pod Contents: " << endl;
     t.showSongList();
+    cout << endl;
 
     cout << "------------------Testing UT Pod Destructor------------------" << endl;
     if(true)
@@ -393,4 +356,42 @@ int main(int argc, char *argv[])
         toBeKilled.showSongList();
         UtPod emptyPod;
     }
+    cout << endl;
+
+    cout << "*************************OUR SONG TEST CASES*************************" << endl;
+
+    cout << "------------------Testing Default Song Constructor------------------" << endl;
+    Song defaultSong;
+    cout << "Song Name: " << defaultSong.getTitle() << " Song Artist: " << defaultSong.getArtist() << " Song Size: " << defaultSong.getSize() << endl << endl;
+
+    cout << "------------------Testing Parameter Song Constructor------------------" << endl;
+    Song paramSong("21 Guns", "Green Day", 35);
+    cout << "Song Name: " << paramSong.getTitle() << " Song Artist: " << paramSong.getArtist() << " Song Size: " << paramSong.getSize() << endl << endl;
+
+    cout << "------------------Changing Default Song Values------------------" << endl;
+    defaultSong.setTitle("Powerglide");
+    defaultSong.setArtist("Rae Sremmurd");
+    defaultSong.setSize(24);
+    cout << "Song Name: " << defaultSong.getTitle() << " Song Artist: " << defaultSong.getArtist() << " Song Size: " << defaultSong.getSize() << endl << endl;
+
+    cout << "------------------Checking Operators------------------" << endl;
+    cout << defaultSong.getTitle() << " < " <<  paramSong.getTitle() << ": " << (defaultSong < paramSong ? "true":"false") << endl;
+    cout << defaultSong.getTitle() << " > " <<  paramSong.getTitle() << ": " << (defaultSong > paramSong ? "true":"false") << endl;
+    cout << defaultSong.getTitle() << " == " <<  paramSong.getTitle() << ": " << (defaultSong == paramSong ? "true":"false") << endl << endl;
+
+    cout << "------------------Checking Operators on Letters Only------------------" << endl;
+    paramSong.setTitle("American Idiot");
+    cout << paramSong.getTitle() << " < " <<  defaultSong.getTitle() << ": " << (paramSong < defaultSong ? "true":"false") << endl;
+    cout << paramSong.getTitle() << " > " <<  defaultSong.getTitle() << ": " << (paramSong > defaultSong ? "true":"false") << endl;
+    cout << paramSong.getTitle() << " == " <<  defaultSong.getTitle() << ": " << (paramSong == defaultSong ? "true":"false") << endl << endl;
+
+    cout << "------------------Checking Equals Operator------------------" << endl;
+    defaultSong.setTitle("American Idiot");
+    cout << paramSong.getTitle() << " by " << paramSong.getArtist() << " == " <<  defaultSong.getTitle() << " by " << defaultSong.getArtist() << ": " << (paramSong == defaultSong ? "true":"false") << endl;
+    defaultSong.setArtist("Green Day");
+    cout << paramSong.getTitle() << " by " << paramSong.getArtist() << " == " <<  defaultSong.getTitle() << " by " << defaultSong.getArtist() << ": " << (paramSong == defaultSong ? "true":"false") << endl;
+    defaultSong.setSize(35);
+    cout << paramSong.getTitle() << " by " << paramSong.getArtist() << " == " <<  defaultSong.getTitle() << " by " << defaultSong.getArtist() << ": " << (paramSong == defaultSong ? "true":"false") << endl;
+
+    t.clearMemory();
 }

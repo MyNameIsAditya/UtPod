@@ -6,10 +6,10 @@
  *
  * Replace <NAME> with your name.
  *
- * On my honor, Aditya Khanna, this programming project is my own work
+ * On my honor, Aditya Khanna and Kedar Raman, this programming project is my own work
  * and I have not provided this code to any other student.
  *
- * Name: Aditya Khanna
+ * Name: Aditya Khanna and Kedar Raman
  * email address: adityakhanna22@yahoo.com
  * UTEID: ak34642
  * Section 5 digit ID: 16225

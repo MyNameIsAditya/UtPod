@@ -6,10 +6,10 @@
  *
  * Replace <NAME> with your name.
  *
- * On my honor, Aditya Khanna, this programming project is my own work
+ * On my honor, Aditya Khanna and Kedar Raman, this programming project is my own work
  * and I have not provided this code to any other student.
  *
- * Name: Aditya Khanna
+ * Name: Aditya Khanna and Kedar Raman
  * email address: adityakhanna22@yahoo.com
  * UTEID: ak34642
  * Section 5 digit ID: 16225
@@ -35,7 +35,7 @@ UtPod::UtPod()
 UtPod::UtPod(int size)
 {
     songs = NULL;
-    if ((size > 0) || (size <= MAX_MEMORY))
+    if ((size > 0) && (size <= MAX_MEMORY))
     {
         memSize = size;
     }
@@ -186,14 +186,13 @@ void UtPod::sortSongList()
 */
 void UtPod::clearMemory()
 {
-    SongNode * temp = songs;
-    while(temp != NULL)
+    SongNode* temp = songs;
+    while (temp != NULL)
     {
-        SongNode * prev = temp;
-        temp = temp->next;
-        delete prev;
+        temp = songs->next;
+        delete songs;
+        songs = temp;
     }
-    songs = NULL;
 }
 
 /* FUNCTION - int getTotalMemory
